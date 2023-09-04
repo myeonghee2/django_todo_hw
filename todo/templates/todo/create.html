@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>여기에 todo 작성해주세요.</h1>
+    <h1>todo list 작성</h1>
     <form action="/todo/create/" method="post">
         {% csrf_token %}
         <input type="text" name="content" id="content">
-        <button type="submit">만들기</button>
+        <button type="submit">입력하기</button>
     </form>
 </body>
 </html>

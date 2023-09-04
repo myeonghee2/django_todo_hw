@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    todo의 index입니다.
+    <a href="/todo/create/">
+        <button>새로만들기</button>
+    </a>
+
+    <ul>
+        {% for todo in todos %}
+        <a href="/todo/{{ todo.id }}">
+            <li>
+                <div>{{ todo.content}}</div>
+            </li>
+        </a>
+
+        {% endfor %}
+    </ul>        
+</body>
+</html>
