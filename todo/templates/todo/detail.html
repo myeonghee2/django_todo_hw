@@ -10,17 +10,18 @@
         <h1>{{ todo.content }}</h1>
         <!-- <p>{{ todo.created_at }}</p> -->
         <p>{{ todo.updated_at }}</p>
+        <p>{{ todo.name.username }}</p>
 
         {% if request.user == todo.user %}
-        <div>
-            <form action="/todo/delete/{{todo.id}}/" method="post">
+    <div>
+        <form action="/todo/delete/{{todo.id}}/" method="post">
             {% csrf_token %}
             <button>삭제하기</button>
-            </form>
-            <a href="/todo/update/{{todo.id}}/">
-                <button>수정하기</button>
-            </a> 
-        </div>
+        </form>
+        <a href="/todo/update/{{todo.id}}/">
+            <button>수정하기</button>
+        </a> 
+    </div>
         {% endif %}
         <a href="/todo/">
             <button>뒤로가기</button>
