@@ -1,4 +1,3 @@
-
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
@@ -25,4 +24,4 @@ def create(request):
         return render(request, 'todo/create.html')
     else:
         return HttpResponse("Invalid request method", setatus=405)
-   
+  
