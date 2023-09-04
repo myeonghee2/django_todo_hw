@@ -6,7 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    todo의 index입니다.
+    {% if request.user.is_authenticated %}
+    <div>{{ request.user.username }}</div>
+    <form action="/user/logout/" method="post">
+        {% csrf_token %}
+        <button>로그아웃</button>
+    </form>
+    {% else %}
+    <div>
+        <a href="/user/login/">로그인</a>
+        <a href="/user/signup/">회원가입</a>
+    </div>
+    {% endif %}
     <a href="/todo/create/">
         <button>새로만들기</button>
     </a>
